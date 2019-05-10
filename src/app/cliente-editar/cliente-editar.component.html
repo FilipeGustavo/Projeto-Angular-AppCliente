@@ -1,0 +1,34 @@
+<div>
+  <h3>Editar Cliente</h3>
+</div>
+<form class="example-container" [formGroup]="clientForm" (ngSubmit)="updateCliente(clientForm.value)">
+  <mat-form-field>
+    <input matInput name="nome_cliente" placeholder="Nome do cliente" formControlName="nome_cliente">
+  </mat-form-field>
+  <!--<mat-form-field>
+    <input matInput name="data_nascimento" [matDatepicker]="picker" placeholder="Data Nascimento" formControlName="data_nascimento">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>-->
+  <mat-form-field>
+    <input  matInput name="cpf" placeholder="Data de Nascimento" formControlName="data_nascimento">
+  </mat-form-field> 
+  <mat-form-field>
+    <input  matInput name="cpf" placeholder="cpf" formControlName="cpf">
+  </mat-form-field>  
+  <mat-form-field>
+    <input matInput name="email" placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="endereco" placeholder="Endereço" formControlName="end">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="bairro" placeholder="Bairro" formControlName="bairro">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="cidade" placeholder="Cidade" formControlName="cidade">
+  </mat-form-field>
+
+
+  <button type="submit" [disabled]="!clientForm.valid" mat-button color="primary" >Salvar</button>
+</form>

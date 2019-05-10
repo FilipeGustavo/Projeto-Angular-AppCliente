@@ -1,0 +1,31 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <button mat-flat-button color="accent" [routerLink]="['/clientes']"><mat-icon>fast_rewind</mat-icon> Voltar</button>
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h2>{{cliente.nome_cliente}}</h2></mat-card-title>
+      <!--<mat-card-subtitle>{{cliente.cpf}}</mat-card-subtitle>-->
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>Codigo: <span>{{cliente.id_cliente}}</span></dt>                        
+        <dt>CPF: {{cliente.cpf}}</dt>
+        <dd></dd>
+        <dt>Data Nascimento: {{cliente.data_nascimento}}</dt>
+        <dt>Endereço: {{cliente.end}}</dt>
+        <dt>Bairro: {{cliente.bairro}}</dt>
+        <dt>Cidade: {{cliente.cidade}}</dt>
+        <dt>Email: {{cliente.email}}</dt>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" class="teste" [routerLink]="['/cliente-editar', cliente.id_cliente]"><mat-icon>edit</mat-icon> Editar</button>
+      <button mat-flat-button color="warn" (click)="deleteCliente(cliente.id_cliente)"><mat-icon>delete</mat-icon> Excluir</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

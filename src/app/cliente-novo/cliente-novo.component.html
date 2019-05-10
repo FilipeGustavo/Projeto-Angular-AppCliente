@@ -1,0 +1,28 @@
+<div>
+  <h3>Adicionar Novo Cliente</h3>
+</div>
+<form class="example-container" [formGroup]="clientForm" (ngSubmit)="addCliente(clientForm.value)">
+  <mat-form-field>
+    <input matInput name="nome_cliente" placeholder="Nome do Cliente" formControlName="nome_cliente">
+  </mat-form-field>
+  <mat-form-field>
+    <input  matInput name="cpf" placeholder="CPF" formControlName="cpf">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="data_nascimento" placeholder="Data de Nascimento" formControlName="data_nascimento">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="email" placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="end" placeholder="Endereço" formControlName="end">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="bairro" placeholder="Bairro" formControlName="bairro">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="cidade" placeholder="Cidade" formControlName="cidade">
+  </mat-form-field>
+
+  <button type="submit" [disabled]="!clientForm.valid" mat-button color="primary" >Adicionar</button>
+</form>
